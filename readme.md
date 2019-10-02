@@ -17,7 +17,7 @@ which is the name of the output csv
 
 ## Courseworks Namelist Exctraction
 
-To get this list from Courseworks: <br>
+To get a list of student names from an LMS powered by Canvas (https://www.instructure.com/canvas/higher-education?newhome=canvas): <br>
 - Go to the People page for the class <br>
 - Set the role to student <br>
 - Run the below JS snippet in your browser console: <br>

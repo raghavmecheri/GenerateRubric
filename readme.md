@@ -1,8 +1,12 @@
 # RubricGen
 An automated grading rubric generator to make the lives of Instructors easier
 
-# Sample Call
-python3 generate_rubric.py "namelist.txt" "rubric.json" "rubric.csv" <br>
+# Usage
+- Clone this repository
+- Run the following command: ```bash
+python3 generate_rubric.py "namelist.txt" "rubric.json" "rubric.csv"```
+- Note: You may need to run ```bash pip install pandas``` for this executable to run
+<br>
 Sample .txt and .json input files can be found in the samples/ directory. <br>
 It's worth noting that the .json file has a "Total":0 row by design, to hold the total points deducted per student <br>
 

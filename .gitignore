@@ -1,5 +1,7 @@
-namelist.txt
-hw2.json
+*.txt
+*.json
+!samples/*.txt
+!samples/*.json
 *.csv
 # Byte-compiled / optimized / DLL files
 __pycache__/

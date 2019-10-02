@@ -2,6 +2,7 @@ import pandas as pd
 import json
 import sys
 import re
+import os
 
 def refactor_rules(gradepoints, namelist):
 	rows = []
@@ -22,6 +23,10 @@ def are_invalid(name, grades, output):
 		return True
 	return False
 
+def delete_file(filename):
+	if(os.path.exists(filename)):
+		os.remove(filename)
+
 if __name__ == "__main__":
 
 	try:
@@ -35,7 +40,11 @@ if __name__ == "__main__":
 	if(are_invalid(NAME_FILE, GRADE_FILE, OUTPUT_FILE)):
 		print("Please pass three filenames, a .txt namelist, a json rubric, and an output csv file in that order")
 		raise SystemExit
-		
+
+	# delete_file(NAME_FILE)
+	# delete_file(GRADE_FILE)
+	delete_file(OUTPUT_FILE)
+
 	print("Extracting names...")
 
 	namelist = open(NAME_FILE,"r").read().split(',')
@@ -57,7 +66,7 @@ if __name__ == "__main__":
 	my_csv = pd.DataFrame(columns=cols)
 
 	row_entries = refactor_rules(gradepoints,namelist)
-	my_csv.append(row_entries)
+	my_csv = my_csv.append(row_entries)
 
 	my_csv.to_csv(OUTPUT_FILE, index=False)
 
